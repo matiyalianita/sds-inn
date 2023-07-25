@@ -11,7 +11,7 @@ public class Inventory
         _itemProvider = itemProvider;
     }
 
-    void UpdateQuality()
+    public void UpdateQuality()
     {
         var items = _itemProvider.GetItems().ToArray();
 
