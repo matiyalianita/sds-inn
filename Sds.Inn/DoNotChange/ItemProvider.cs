@@ -1,19 +1,20 @@
+using Sds.Inn.Products;
+
 namespace Sds.Inn.DoNotChange;
 
-public class ItemProvider : IItemProvider
+public class ItemProvider : IItemProvider<SdsItem>
 {
-    private
-
-    IList<Item> _items = new List<Item>
+    private IList<SdsItem> _items = new List<SdsItem>
     {
-        new("+5 Dexterity Vest", 10, 20),
-        new("Aged Brie", 2, 0),
-        new("Elixir of the Mongoose", 5, 7),
-        new("Sulfuras", 0, 80),
-        new("Backstage passes", 15, 20),
-        new("Conjured", 3, 6)
+        new SdsItem(SDSItemNames.DEXTERITY_VEST, 10, 20),
+        new AgedBrie( 2, 0),
+        new SdsItem (SDSItemNames.ELIXIR_OF_THE_MONGOOSE, 5, 7),
+        new Sulfuras( 0, 80),
+        new BackstagePasses( 15, 20),
+        new Conjured( 3, 6)
     };
-    public IEnumerable<Item> GetItems()
+
+    public IEnumerable<SdsItem> GetItems()
     {
         return _items.ToArray();
     }

@@ -1,6 +1,6 @@
 namespace Sds.Inn.DoNotChange;
 
-public interface IItemProvider
+public interface IItemProvider<T> where T : Item
 {
-    IEnumerable<Item> GetItems();
+    IEnumerable<T> GetItems();
 }
